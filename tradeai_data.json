@@ -1,0 +1,148 @@
+{
+  "startingCapital": 100000,
+  "availableCash": 100000,
+  "positions": {},
+  "orders": [],
+  "trades": [],
+  "watchlists": [
+    {
+      "id": "wl_default",
+      "name": "NIFTY Bluechips",
+      "symbols": [
+        "RELIANCE",
+        "TCS",
+        "HDFCBANK",
+        "INFY",
+        "ICICIBANK",
+        "TATAMOTORS"
+      ],
+      "createdAt": "2026-10-13T23:10:37.379Z"
+    },
+    {
+      "id": "wl_banking",
+      "name": "Banking & Financials",
+      "symbols": [
+        "HDFCBANK",
+        "ICICIBANK",
+        "SBIN",
+        "BAJFINANCE",
+        "KOTAKBANK"
+      ],
+      "createdAt": "2026-10-13T23:10:37.379Z"
+    }
+  ],
+  "riskSettings": {
+    "maxOrderValue": 10000,
+    "maxExposurePerInstrument": 20000,
+    "dailyLossLimit": 5000,
+    "perTradeRiskPercent": 2,
+    "killSwitchActive": false,
+    "simulatedBrokerageFlat": 20,
+    "simulatedSlippagePercent": 0.05
+  },
+  "strategies": [
+    {
+      "id": "strat_ma_cross",
+      "name": "Golden Cross (SMA 20/50)",
+      "description": "Trend following strategy entering when 20-day SMA crosses above 50-day SMA",
+      "symbols": [
+        "RELIANCE",
+        "TCS",
+        "INFY"
+      ],
+      "timeframe": "1D",
+      "entryRules": [
+        {
+          "indicator": "SMA",
+          "period": 20,
+          "operator": ">",
+          "value": 50
+        }
+      ],
+      "exitRules": [
+        {
+          "indicator": "SMA",
+          "period": 20,
+          "operator": "<",
+          "value": 50
+        }
+      ],
+      "stopLossPercent": 2.5,
+      "takeProfitPercent": 6,
+      "positionSizeCash": 10000,
+      "createdAt": "2026-10-13T23:10:37.379Z"
+    },
+    {
+      "id": "strat_rsi_reversal",
+      "name": "RSI Oversold Mean Reversion",
+      "description": "Contrarian setup buying stocks with RSI(14) below 30 and selling when RSI exceeds 65",
+      "symbols": [
+        "TATAMOTORS",
+        "SBIN",
+        "LT"
+      ],
+      "timeframe": "1D",
+      "entryRules": [
+        {
+          "indicator": "RSI",
+          "period": 14,
+          "operator": "<",
+          "value": 30
+        }
+      ],
+      "exitRules": [
+        {
+          "indicator": "RSI",
+          "period": 14,
+          "operator": ">",
+          "value": 65
+        }
+      ],
+      "stopLossPercent": 3,
+      "takeProfitPercent": 7.5,
+      "positionSizeCash": 10000,
+      "createdAt": "2026-10-13T23:10:37.379Z"
+    }
+  ],
+  "backtests": [],
+  "alerts": [
+    {
+      "id": "alt_1",
+      "symbol": "RELIANCE",
+      "condition": "ABOVE",
+      "targetPrice": 2800,
+      "currentPrice": 2742.5,
+      "triggered": false,
+      "createdAt": "2026-10-13T23:10:37.379Z",
+      "notes": "Breakout watch level above 2800 resistance"
+    },
+    {
+      "id": "alt_2",
+      "symbol": "TCS",
+      "condition": "BELOW",
+      "targetPrice": 4000,
+      "currentPrice": 4125.8,
+      "triggered": false,
+      "createdAt": "2026-10-13T23:10:37.379Z",
+      "notes": "Dip buying support zone near 4000 psychological mark"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log_init",
+      "timestamp": "2026-10-13T23:10:37.379Z",
+      "action": "SYSTEM_BOOT",
+      "details": "TRADEAI terminal initialized with starting virtual capital of ₹1,00,000.",
+      "actor": "SYSTEM",
+      "ip": "127.0.0.1"
+    },
+    {
+      "id": "log_1791933037404",
+      "timestamp": "2026-10-13T23:10:37.404Z",
+      "action": "ACCOUNT_RESET",
+      "details": "Paper trading account reset to initial capital of ₹1,00,000.",
+      "actor": "USER",
+      "ip": "127.0.0.1"
+    }
+  ]
+}

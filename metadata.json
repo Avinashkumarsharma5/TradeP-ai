@@ -1,0 +1,6 @@
+{
+  "name": "TRADEAI — Intelligent Trading",
+  "description": "Intelligent AI-assisted trading terminal for Indian stock markets (NSE/BSE) with paper trading, risk controls, strategy builder, backtesting, and Gemini AI insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
